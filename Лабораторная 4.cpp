@@ -5,30 +5,30 @@ int main()
     setlocale(LC_ALL, "ru");
     using namespace std;
     float dlin, shir, diametr;
-    cout << "ââåäèòå äëèíó ïðÿìîóãîëüíèêà\n";
+    cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°\n";
     cin >> dlin;
-    cout << "Ââåäèòå øèðèíó ïðÿìîóãîëüíèêà\n";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°\n";
     cin >> shir;
     cout << "\n";
-    cout << "Ïëîùàäü ïðÿìîóãîëüíèêà =" << dlin * shir << endl;
-    cout << "Ïåðèìåòð ïðÿìîóãîëüíèêà = " << 2 * (dlin + shir) << endl;
+    cout << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ° =" << dlin * shir << endl;
+    cout << "ÐŸÐµÑ€Ð¸Ð¼ÐµÑ‚Ñ€ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ° = " << 2 * (dlin + shir) << endl;
     cout << "\n";
-    cout << "ââåäèòå äèàìåòð îêðóæíîñòè" << endl;
+    cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€ Ð¾ÐºÑ€ÑƒÐ¶Ð½Ð¾ÑÑ‚Ð¸" << endl;
     cin >> diametr;
     float PI = 3.14;
 
-    cout << "äëèíà îêðóæíîñòè ðàâíà - " << PI * diametr << "\n" << endl;
+    cout << "Ð´Ð»Ð¸Ð½Ð° Ð¾ÐºÑ€ÑƒÐ¶Ð½Ð¾ÑÑ‚Ð¸ Ñ€Ð°Ð²Ð½Ð° - " << PI * diametr << "\n" << endl;
 
-    cout << "Ââåäèòå 2 ÷èñëà" << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 2 Ñ‡Ð¸ÑÐ»Ð°" << endl;
 
     float first, second;
 
     cin >> first;
     cin >> second;
 
-    cout << "Ñðåäíåå àðèôìåòè÷åñêîå ýòèõ ÷èñåë = " << (first + second) / 2 << "\n" << endl;
+    cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ ÑÑ‚Ð¸Ñ… Ñ‡Ð¸ÑÐµÐ» = " << (first + second) / 2 << "\n" << endl;
 
-    cout << "ââåäèòå 2 íåíóëåâûõ ÷èñëà\n";
+    cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 2 Ð½ÐµÐ½ÑƒÐ»ÐµÐ²Ñ‹Ñ… Ñ‡Ð¸ÑÐ»Ð°\n";
     float zerofirst, zerosecond;
     cin >> zerofirst;
     cin >> zerosecond;
@@ -36,11 +36,11 @@ int main()
     zerosecond = zerosecond * zerosecond;
 
 
-    cout << "ñóììà èõ êâàäðàòîâ =" << zerofirst + zerosecond << "\t" << "ðàçíîñòü èõ êâàäðàòîâ =" << zerofirst - zerosecond << "\t " << "ïðîèçâåäåíèå èõ êâàäðàòîâ =" << zerofirst * zerosecond << endl;
-    cout << "÷àñòíîå èõ êâàäðàòîâ = " << (zerofirst * zerofirst) / (zerosecond * zerosecond) << endl;
+    cout << "ÑÑƒÐ¼Ð¼Ð° Ð¸Ñ… ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð¾Ð² =" << zerofirst + zerosecond << "\t" << "Ñ€Ð°Ð·Ð½Ð¾ÑÑ‚ÑŒ Ð¸Ñ… ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð¾Ð² =" << zerofirst - zerosecond << "\t " << "Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ Ð¸Ñ… ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð¾Ð² =" << zerofirst * zerosecond << endl;
+    cout << "Ñ‡Ð°ÑÑ‚Ð½Ð¾Ðµ Ð¸Ñ… ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð¾Ð² = " << (zerofirst * zerofirst) / (zerosecond * zerosecond) << endl;
     cout << "\n";
 
-    cout << "ââåäèòå 2 íîâûõ íåíóëåâûõ ÷èñëà" << endl;
+    cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ 2 Ð½Ð¾Ð²Ñ‹Ñ… Ð½ÐµÐ½ÑƒÐ»ÐµÐ²Ñ‹Ñ… Ñ‡Ð¸ÑÐ»Ð°" << endl;
     cin >> zerofirst;
     cin >> zerosecond;
 
@@ -49,7 +49,7 @@ int main()
     modulfirst = abs(zerofirst);
     modulsecond = abs(zerosecond);
 
-    cout << "Ñóììà ìîäóëåé = " << modulfirst + modulsecond << "\t" << "ðàçíîñòü ìîäóëåé = " << modulfirst - modulsecond << "\t" << "ïðîèçâåäåíèå ìîäóëåé = " << modulfirst * modulsecond << "\t" << "÷àñòíîå ìîäóëåé = " << modulfirst / modulsecond << endl;
+    cout << "Ð¡ÑƒÐ¼Ð¼Ð° Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¹ = " << modulfirst + modulsecond << "\t" << "Ñ€Ð°Ð·Ð½Ð¾ÑÑ‚ÑŒ Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¹ = " << modulfirst - modulsecond << "\t" << "Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¹ = " << modulfirst * modulsecond << "\t" << "Ñ‡Ð°ÑÑ‚Ð½Ð¾Ðµ Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¹ = " << modulfirst / modulsecond << endl;
 
 
     return 0;
