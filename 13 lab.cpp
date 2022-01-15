@@ -1,90 +1,72 @@
-#include <iostream>
-#include <ctime>
-
+#include<iostream>
 using namespace std;
 
-int main()
-{ 
-    srand(time(NULL));
-    setlocale(LC_ALL, "ru");
-    double a;
-    int x, n = 0;
-    double s = 1, summ = 1,Schet = 0,Snechet = 0;
-    cout << "введите стоимость 1 кг конфет - ";cin >> a;
-    for (int i = 0; i < 1; i++)
+int main() {
+    setlocale(LC_ALL, "Russian");
+    float x, m, k, c = 1, n, A, ss = 0, st, AA, nnnn, sss = 1, stt;
+    int N;
+    cout << "Задание №1." << endl;
+    cout << "Введите цену на 1 кг конфет:" << endl;
+    cin >> x;
+    for (m = 0.1; m < 1.1; m += 0.1)
     {
-        for (double f = 0.1; f < 1; f += 0.1)
+        cout << m << " кг = " << x * m << "." << endl;
+
+    }
+    cout << "Задание №2." << endl;
+    cout << "Введите количество сомножителей N:" << endl;
+    cin >> N;
+    for (k = 1; k <= N; k++)
+    {
+        c = c * (1 + 0.1 * k);
+    }
+    cout << c << endl;
+    int nnn, cc = 1;
+    cout << "Задание №3." << endl;
+    cout << "Введите число:" << endl;
+    cin >> n;
+    for (int i = 1; cc < n * n - 2; )
+    {
+        i += 2;
+        cc += i;
+        if (cc != 900)
         {
-            cout << f << " кг конфет стоят " << a * f << endl;
+            cout << "Промежуточная сумма = " << cc << "." << endl;
+
         }
+        else if (cc == 900)
+        {
+            cout << "Квадрат введённого числа = " << cc << "." << endl;
+        }
+
     }
-    cout << "\n_________________________________________________________";
-    cout << "\n\n";
-    
-    double b = 1.1,q;
-    cout << "Введите количество сомножителей - ";cin >> x;
-    for (int i = 0; i < x - 1; i++)
+    cout << "Задание №4." << endl;
+    cout << "Введите число A:" << endl;
+    cin >> A;
+    cout << "Введите число N:" << endl;
+    cin >> nnn;
+    for (st = 1; st <= nnn; st++)
     {
-        // x = 1;
-        cout << b << " * ";               
-        q = b * b;
-        b += 0.1;
+        ss = ss + pow(A, st);
+
+
     }
-    cout<<b<<" = ";
-    cout << q << endl;
-    cout << "\n_________________________________________________________";
-    cout << "\n\n";
-    
-    cout << "введите число для возведения в квадрат - ";cin >> a;
-    while ((summ / a) != a)
+    cout << ss + 1 << endl;
+    cout << "Задание №5." << endl;
+    cout << "Введите число A:" << endl;
+    cin >> AA;
+    cout << "Введите число N:" << endl;
+    cin >> nnnn;
+    for (stt = 1; stt <= nnnn; stt++)
     {
-        n++;
-     
-        cout << s << " + ";
-        s += 2;
-        summ += s;
+        sss += pow(-A, stt);
+
+
     }
-    cout << s << " = " << summ << endl;
-    cout << "\n_________________________________________________________";
-    cout << "\n\n";
-    
-    cout << "введите число А и его индекс" << endl;
-    cout << "A = ";cin >> a;
-    cout << "Индекс = ";cin >> n;
-    s = 0; summ = 0;
-    for (int i = 0; i < n; i++)
-    {
-        cout << pow(a, i) << " + ";
-        summ += pow(a, i);
-    }
-    cout << pow(a, n) << " = " << summ + pow(a, n);
-    cout << "\n_________________________________________________________";
-    cout << "\n\n";
-    
-    cout << "введите число А и его индекс" << endl;
-    cout << "A = ";cin >> a;
-    cout << "Индекс = ";cin >> n;
-    summ = 0;
-    int chet = 0;
-    int nechet = 1;
-    for (chet, nechet; (nechet < n) || (chet < n); nechet+= 2, chet+= 2)
-    {
-        // отриц степень
-        cout << pow(a, chet) << " - " << pow(a, nechet) << " + ";                        
-        Schet += pow(a, chet);
-        Snechet -= pow(a, nechet);
-    }
-    if (n % 2 == 0)
-    {
-        cout << pow(a, n) << " = " << Schet + Snechet + pow(a, n) << endl;
-    }
-    else
-    {
-        cout<< "= " << Schet + Snechet << endl;
-    }
-    cout << "\n_________________________________________________________";
-    cout << "\n\n";
-    
-    
+    cout << sss;
+
+
+
+
     return 0;
 }
