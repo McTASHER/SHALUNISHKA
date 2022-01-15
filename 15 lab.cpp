@@ -1,171 +1,102 @@
-#include <iostream>
-#include <stdbool.h>
-#include <ctime>
-#include <string>
-
+#include <stdio.h>
+#include<iostream>
 using namespace std;
-
-double powerA3(double a, double b)
+void poweraA3(float a, float* b)
 {
-	b = pow(a, 3);
-	return b;
+    *b = a * a * a;
 }
-
-int Sign(int x)
+int Sign(float x)
 {
-	if (x < 0)
-	{
-		return -1;
-	}
-	else if (x == 0)
-	{
-		return 0;
-	}
-	else
-	{
-		return 1;
-	}
-}
+    if (x < 0)
+    {
+        return -1;
+    }
+    else if (x == 0)
+    {
+        return 0;
+    }
+    else if (x > 0)
+    {
+        return 1;
+    }
 
-double rings(double r1,double r2)
+}
+float RingS(float R1, float R2)
 {
-	const double pi = 3.14;
-	cout << "Площадь внутреннего кольца = ";
-	return (pi * pow(r2, 2)) - (pi * pow(r1, 2));
+    float S = 3.14 * (R1 * R1 - R2 * R2);
+    if (R1 > R2)
+    {
+        return S;
+    }
+    else
+    {
+        return 0;
+    }
 }
-
 int Quarter(int x, int y)
 {
-	int result;
-	if (x > 0)
-	{
-		if (y > 0)
-		{
-			result = 1;
-		}
-		else
-		{
-			result = 4;
-		}
-	}
-	else
-	{
-		if (y > 0)
-		{
-			result = 2;
-		}
-		else
-		{
-			result = 3;
-		}
-	}
-	return result;
+    if (x > 0 && y > 0)
+    {
+        return 1;
+    }
+    else if (x < 0 && y > 0)
+    {
+        return 2;
+    }
+    else if (x < 0 && y < 0)
+    {
+        return 3;
+    }
+    else if (x > 0 && y < 0)
+    {
+        return 4;
+    }
 }
-
-double fact2(int n)
+double Fact2(int N)
 {
-	int summ = 1;
-	int gg;
-	if (n % 2 == 0)
-	{
-		for (int i = 2; i <= n; i += 2)
-		{
-			cout << i;
-			if (i != n)
-			{
-				cout << " * ";
-			}
-			summ *= i;
-			if (i == n)
-			{
-				cout << " = ";
-			}
-		}
-		return summ;
-	}
-	else
-	{
-		for (int i = 1; i <= n; i += 2)
-		{
-			cout << i;
-			if (i != n)
-			{
-				cout << " * ";
-			}
-			summ *= i;
-			if (i == n)
-			{
-				cout << " = ";
-			}
-		}
-		return summ;
-	}
+    double ff = 1;
+    for (; N > 1; N -= 2)
+        ff *= N;
+    return ff;
 }
-
-int main()
+int main(void)
 {
-	srand(time(NULL));
-	setlocale(LC_ALL, "ru");
-	int x,y;
-	double a,b = 0;
-	int r1, r2;
-	const double pi = 3.14;
-
-	
-	cout << "Введите 5 чисел для нахождения их 3 степени" << endl;
-	cout << "A = ";cin >> a; powerA3(a, b);cout << a << "^3 = " << powerA3(a, b) <<"\n"<< endl;
-	cout << "A = ";cin >> a;powerA3(a, b);cout << a << "^3 = " << powerA3(a, b) << "\n" << endl;
-	cout << "A = ";cin >> a;powerA3(a, b);cout << a << "^3 = " << powerA3(a, b) << "\n" << endl;
-	cout << "A = ";cin >> a;powerA3(a, b);cout << a << "^3 = " << powerA3(a, b) << "\n" << endl;
-	cout << "A = ";cin >> a;powerA3(a, b);cout << a << "^3 = " << powerA3(a, b) << "\n" << endl;
-	
-	cout << "\n\n_______________________________________________________\n\n";
-	cout << "Введите 2 числa" << endl;
-	cout << "Х = ";cin >> x;
-	cout << "Y = ";cin >> y;
-	cout << "\n";
-	cout << Sign(x) + Sign(y);
-	cout << "\n\n_______________________________________________________\n\n";
-	
-	
-	cout << "Введите радиус большого кольца и малого" << endl;
-	cout << "R внут = ";cin >> r1;
-	cout << "R внеш = ";cin >> r2;
-	cout << rings(r1, r2) << endl;
-	cout << "\n";
-	cout << "Введите радиус большого кольца и малого" << endl;
-	cout << "R внут = ";cin >> r1;
-	cout << "R внеш = ";cin >> r2;
-	cout << rings(r1, r2) << endl;
-	cout << "\n";
-	cout << "Введите радиус большого кольца и малого" << endl;
-	cout << "R внут = ";cin >> r1;
-	cout << "R внеш = ";cin >> r2;
-	cout << rings(r1, r2) << endl;
-	cout << "\n\n_______________________________________________________\n\n";
-	
-
-	cout << "Введите координаты точки" << endl;
-	cout << "X = ";cin >> x;
-	cout << "Y = ";cin >> y;
-	cout <<"точка находится в "<< Quarter(x,y) << " четверти" << endl;cout << "\n";
-	cout << "Введите координаты точки" << endl;
-	cout << "X = ";cin >> x;
-	cout << "Y = ";cin >> y;
-	cout << "точка находится в " << Quarter(x, y) << " четверти" << endl;cout << "\n";
-	cout << "Введите координаты точки"<< endl;
-	cout << "X = ";cin >> x;
-	cout << "Y = ";cin >> y;
-	cout << "точка находится в " << Quarter(x, y) << " четверти" << endl;cout << "\n";
-	cout << "\n\n_______________________________________________________\n\n";
-	
-	
-	cout << "введите 2 числа: четно и нечётное" << endl;
-	cout << "Чётное - ";cin >> x;
-	cout << fact2(x);
-	cout << "\n\n";
-	cout << "Нечётное - ";cin >> x;
-	cout << fact2(x);
-	
-	return 0;
+    setlocale(LC_ALL, "RU");
+    cout << "Номер 1.\n";
+    int i;
+    for (i = 1; i <= 5; ++i)
+    {
+        float a;
+        cout << "A:";
+        cin >> a;
+        float b;
+        poweraA3(a, &b);
+        cout << a << "^3 = " << b << endl;
+    }
+    cout << "Номер 2.\n";
+    float a1, b1;
+    cout << "B:";
+    cin >> a1;
+    cout << "A:";
+    cin >> b1;
+    cout << "Sign(A) + Sign(B) = " << Sign(a1) + Sign(b1);
+    cout << "\nЗадание 3.\n";
+    float R1, R2;
+    for (int j = 1; j <= 3; j++)
+    {
+        cin >> R1 >> R2;
+        cout << "Кольцо " << j << " Площадь = " << RingS(R1, R2) << "." << endl;
+    }
+    cout << "\nЗадание 4.\n";
+    int x, y;
+    for (int j = 1; j <= 3; j++)
+    {
+        cin >> x >> y;
+        cout << "Точка находится в " << Quarter(x, y) << " четверти." << endl;
+    }
+    cout << "\nЗадание 5.\n";
+    int N;
+    cin >> N;
+    cout << "N!! = " << Fact2(N) << ".";
+    return 0;
 }
