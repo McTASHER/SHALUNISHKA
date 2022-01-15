@@ -1,114 +1,113 @@
 #include <iostream>
-#include <ctime>
-#include <stdbool.h>
-
 using namespace std;
+int fib(int n) {
+    int f = 0;
+    int res = 1;
+    int f0 = 1;
+    int i = 0;
+    while (i <= n) {
+        res = f;
+        f = f0 + f;
+        f0 = res;
+        i++;
+        if (n == f)
+        {
+            cout << "номер: ";
+            return i;
+        }
+    }
+    if (n == 0)
+    {
 
+        return 0;
+    }
+    else
+    {
+        cout << "ошибка ";
+        return 404;
+    }
+}
 int main()
-{ 
-    srand(time(NULL));
+{
+    int a, b, N, k;
+    float proc;
     setlocale(LC_ALL, "ru");
-    
-    int a,aa, b,kolvo = 0, n, k = 1,sum = 1, g, h,nod = 0, max1, min1,chislo = 0;
-    double p,s = 1000;
-    int mass[100];
-    bool proverka = false;
-    
-    cout << "Введите числа А и Б, А < Б" << endl;
-    cout << "A = ";cin >> a; aa = a;
-    cout << "B = ";cin >> b;
-    for (int i = 0; i < b - aa + 1;i++)
+    cout << "Номер 1\n";
+    cout << "Введите a: ";
+    cin >> a;
+    cout << "Введите b: ";
+    cin >> b;
+    int i = a;
+    cout << endl;
+    for (i; i <= b; i++)
     {
-        for (int y = 0; y < a;y++)
+        cout << endl;
+        for (int j = 0; j < i; j++)
         {
-            cout << a;
+            cout << i << " ";
         }
-        cout << " ";
-        a++;
     }
-    cout<<"\n\n_______________________________________________\n\n";
-    
-    cout << "Введите числа А и Б, А > Б" << endl;
-    cout << "A = ";cin >> a; 
-    cout << "B = ";cin >> b;
-    while (a >= b)
+    cout << "\n__________________________\n";
+    cout << "Номер 2\n";
+    i = 0;
+    cout << "введите длинну отрезка а: \n";
+    cin >> a;
+    cout << "введите длинну отрезка b: \n";
+    cin >> b;
+    while (a > b)
     {
-        kolvo++;
         a -= b;
+        i++;
     }
-    cout << "незанятая часть А = " << a << endl;
-    cout << "\n\n_______________________________________________\n\n";
-    
-    
-    cout << "Введите число" << endl;
-    cout << "N = ";cin >> n;
-    
-    while (sum < n)
-    {   
-        k++;
-        sum += k;
-       
-    }
-    cout << "K = " << k << "       Сумма = " << sum;
-
-    cout << "\n\n_______________________________________________\n\n";
-    
-
-    cout << "Начальный вклад = 1000 руб" << endl;
-    cout << "Введите процент по вкладу" << endl;
-    cout << "P = ";cin >> p;
-    kolvo = 0;
-    while (s <= 1100)
+    cout << i << endl;
+    cout << "\n__________________________\n";
+    cout << "Номер 3\n";
+    cout << "введите N:\n";
+    cin >> N;
+    k = 1;
+    i = 1;
+    while (i < N)
     {
-        s *= (p / 100 + 1);
-        kolvo++;
+        k += 1;
+        i += k;
     }
-    cout << "Количество месяцев = " << kolvo << endl;
-    cout << "Итоговый размер вклада = " << s << endl;
-
-    cout << "\n\n_______________________________________________\n\n";
-    
-    cout << "Введите два целых положительных числа" << endl;
-    cout << "G = ";cin >> g;
-    cout << "H = ";cin >> h;
-    
-    
-    while (max(g,h) % min(g,h) != 0)
+    cout << "Наименьшее к = " << k << endl << "Сумма равна: " << i << endl;
+    cout << "\n__________________________\n";
+    cout << "Номер 4\n";
+    cout << "Введите процент по вкладу(>0 <25) :";
+    cin >> proc;
+    if (proc < 0 || proc>25)
     {
-        if (g > h)
-        {
-            g = g % h;
-        }
+        cout << "Нереальный процент :)";
+        system("pause");
+        return 1;
+    }
+    float deposit = 1000;
+    int count = 0;
+    while (deposit <= 1100)
+    {
+        deposit += deposit * proc / 100;
+        count++;
+    }
+
+    std::cout << "До превышения лимита вклада на сумму 1100р. понадобится " << count << " месяца " << "\nсумма вклада составит " << deposit << " руб.";
+    cout << "\n__________________________\n";
+    cout << "Номер 5\n";
+    long int A, B;
+    cout << "Введите 2 числа: ";
+    cin >> A >> B;
+    while (A != B) {
+        if (A > B)
+            A = A - B;
         else
-        {
-            h = h % g;
-        }
-              
+            B = B - A;
     }
-    cout << "NOD = " << min(g, h) << endl;
-    cout << "\n\n_______________________________________________\n\n";
-    
-    cout << "Введите число фибоначчи" << endl;
-    cout << "N = ";cin >> n;
-    mass[0] = 1;
-    mass[1] = 1;
-    mass[2] = 2;
-    mass[3] = 3;
-    for (int i = 4; i < 50;i++)
-    {
-        mass[i] = mass[i - 1] + mass[i - 2];
-
-    }
-    for (int i = 0; proverka == false; i++)
-    {
-        cout << mass[i] << ", ";
-        if (n == mass[i])
-        {
-            proverka = true;
-            chislo = i;
-        }
-    }
-    cout <<"- " << chislo + 1 <<" в последовательности"<< endl;
-    cout << "\n\n_______________________________________________\n\n";
+    cout << "НОД этих чисел: " << A;
+    cout << "\n__________________________\n";
+    cout << "Номер 6\n";
+    int n;
+    cout << "Введите число Фибоначчи: \n";
+    cin >> n;
+    cout << fib(n);
     return 0;
 }
